@@ -11,7 +11,15 @@ spring:
           uri: https://gitee.com/zhuzhiou/ebox-config-repo.git
           username: ${git.username}
           password: ${git.password}
+    inetutils:
+      ignored-interfaces:
+        - Microsoft.*
+        - Software.*
+        - VMware.*
 eureka:
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
