@@ -8,7 +8,7 @@ spring:
       label: master
       server:
         git:
-          uri: '{cipher}a46e315d1c6b8294eecd33f83452fa076d66907dabd25495b5224f7afb5f2b2452189d43bfa51b5a3eef83d4dfa2541f9bd6f6a59ed19c45ff1ba71ee2dad90e'
+          uri: https://gitee.com/zhuzhiou/ebox-config-repo.git
           username: ${git.username}
           password: ${git.password}
 eureka:
