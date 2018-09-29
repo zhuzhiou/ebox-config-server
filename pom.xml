@@ -71,6 +71,7 @@
             <id>prod</id>
             <properties>
                 <eureka.client.service-url.defaultZone>http://user:${env.SECURITY_USER_PASSWORD}@192.168.0.86:8761/eureka/</eureka.client.service-url.defaultZone>
+                <spring.profiles.active>prod</spring.profiles.active>
                 <security.user.password>${env.SECURITY_USER_PASSWORD}</security.user.password>
             </properties>
         </profile>
