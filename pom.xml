@@ -12,6 +12,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <spring.cloud.config.server.git.username>${env.CONFIG_REPO_GIT_USERNAME}</spring.cloud.config.server.git.username>
+        <spring.cloud.config.server.git.password>${env.CONFIG_REPO_GIT_PASSWORD}</spring.cloud.config.server.git.password>
+        <encrypt.key>${env.CONFIG_SERVER_ENCRYPT_KEY}</encrypt.key>
     </properties>
 
     <dependencies>
@@ -30,6 +33,12 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
@@ -46,6 +55,26 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <eureka.client.service-url.defaultZone>http://user:local@127.0.0.1:8761/eureka/</eureka.client.service-url.defaultZone>
+                <security.user.password>local</security.user.password>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <eureka.client.service-url.defaultZone>http://user:${env.SECURITY_USER_PASSWORD}@192.168.0.86:8761/eureka/</eureka.client.service-url.defaultZone>
+                <security.user.password>${env.SECURITY_USER_PASSWORD}</security.user.password>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencyManagement>
         <dependencies>

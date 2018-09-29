@@ -9,17 +9,16 @@ spring:
       server:
         git:
           uri: https://gitee.com/zhuzhiou/ebox-config-repo.git
-          username: ${CONFIG_REPO_GIT_USERNAME}
-          password: ${CONFIG_REPO_GIT_PASSWORD}
+          username: ${spring.cloud.config.server.git.username}
+          password: ${spring.cloud.config.server.git.password}
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: 'http://ebox:ebox@127.0.0.1:8761/eureka/'
+      defaultZone: ${eureka.client.service-url.defaultZone}
 server:
   port: 7001
 security:
   user:
-    name: ${HTTP_BASIC_AUTH_USERNAME:ebox}
-    password: ${HTTP_BASIC_AUTH_PASSWORD:ebox}
+    password: ${security.user.password}

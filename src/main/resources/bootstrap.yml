@@ -1,2 +1,2 @@
 encrypt:
-  key: ${CONFIG_SERVER_ENCRYPT_KEY:ebox}
+  key: '${encrypt.key}'
