@@ -1,24 +1,5 @@
 spring:
   application:
     name: config-server
-  cloud:
-    config:
-      discovery:
-        enabled: true
-      label: master
-      server:
-        git:
-          uri: https://gitee.com/zhuzhiou/ebox-config-repo.git
-          username: ${spring.cloud.config.server.git.username}
-          password: ${spring.cloud.config.server.git.password}
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: ${eureka.client.service-url.defaultZone}
-server:
-  port: 7001
-security:
-  user:
-    password: ${security.user.password}
+  profiles:
+    active: ${spring.profiles.active}

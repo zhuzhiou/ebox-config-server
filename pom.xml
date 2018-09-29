@@ -61,7 +61,7 @@
             <id>local</id>
             <properties>
                 <eureka.client.service-url.defaultZone>http://user:local@127.0.0.1:8761/eureka/</eureka.client.service-url.defaultZone>
-                <security.user.password>local</security.user.password>
+                <spring.profiles.active>local</spring.profiles.active>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
