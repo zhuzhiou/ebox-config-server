@@ -17,6 +17,3 @@ eureka:
       defaultZone: ${eureka.client.service-url.defaultZone}
 server:
   port: 7001
-security:
-  basic:
-    enabled: false

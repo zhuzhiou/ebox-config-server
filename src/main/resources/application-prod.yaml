@@ -17,8 +17,5 @@ eureka:
       defaultZone: ${eureka.client.service-url.defaultZone}
 server:
   port: 7001
-security:
-  user:
-    password: ${security.user.password}
 logging:
   file: /var/log/ebox/${spring.application.name}.log
