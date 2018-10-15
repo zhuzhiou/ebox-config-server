@@ -13,8 +13,11 @@ eureka:
   instance:
     prefer-ip-address: true
   client:
-    service-url:
-      defaultZone: ${eureka.client.service-url.defaultZone}
+    use-dns-for-fetching-service-urls: true
+    region: cn-guangzhou
+    eureka-server-d-n-s-name: ebox
+    eureka-server-port: 8761
+    eureka-server-u-r-l-context: eureka
 server:
   port: 7001
 logging:
