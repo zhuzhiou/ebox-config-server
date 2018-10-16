@@ -18,7 +18,5 @@ eureka:
     eureka-server-d-n-s-name: ebox
     eureka-server-port: 8761
     eureka-server-u-r-l-context: eureka
-server:
-  port: 7001
 logging:
   file: /var/log/ebox/${spring.application.name}.log
