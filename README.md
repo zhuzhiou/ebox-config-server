@@ -29,7 +29,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/ebox/config-server:latest
 ## 运行应用程序
 
 ```
-docker run -it --rm --name config-server --dns 192.168.0.86 registry.cn-shenzhen.aliyuncs.com/ebox/config-server:latest
+docker run -it --rm --name config-server --dns 172.16.159.38 registry.cn-shenzhen.aliyuncs.com/ebox/config-server:latest
 ```
 
 ## 知识点
